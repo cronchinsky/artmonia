@@ -122,6 +122,7 @@ html {
   line-height: 1.5em;
 }
 
+/* Address `font-family` inconsistency between `textarea` and other form elements. */
 /* Remove default margin. */
 /* line 126, ../sass/_normalize.scss */
 body {
@@ -383,6 +384,7 @@ figure {
 /**
  * Forms
  */
+/* Correct margin displayed oddly in IE 6/7. */
 /* Define consistent border, margin, and padding. */
 /* line 383, ../sass/_normalize.scss */
 fieldset {
