@@ -96,6 +96,16 @@ audio:not([controls]) {
 }
 */
 
+@font-face {
+  font-family: 'ElegantIcon';
+  src: url('../fonts/elegant_font/HTMLCSS/fonts/ElegantIcons.eot'); /* IE9 Compatibility Modes */
+  src: url('../fonts/elegant_font/HTMLCSS/fonts/ElegantIcons.woff') format('woff'), /* FF, Chrome, IE9+ */
+       url('../fonts/elegant_font/HTMLCSS/fonts/ElegantIcons.ttf') format('truetype'), /* Safari, Android, iOS 5+ */
+       url('../fonts/elegant_font/HTMLCSS/fonts/ElegantIcons.svg#HPSimplifiedW04-Regular') format('svg'); /* iOS 4 */
+  font-weight: normal;
+  font-style: normal;
+}
+
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -135,6 +145,7 @@ body {
  * http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
  */
 a:link {
+  text-decoration: none;
 }
 a:visited {
 }
@@ -142,12 +153,15 @@ a:hover,
 a:focus {
 }
 a:active {
+  outline: 0;
 }
 
 /* Address `outline` inconsistency between Chrome and other browsers. */
+/*
 a:focus {
   outline: thin dotted;
 }
+*/
 
 /* Improve readability when focused and also mouse hovered in all browsers. */
 a:active,
