@@ -30,6 +30,10 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+#page, .region-bottom {
+	max-width: 100%;
+}
+	
 article a {
 	color: #FD9500;
 	font-weight: bold;
@@ -87,8 +91,8 @@ article a {
 */
 
 #header {
-	height: 144px;
-	background: #DDCEAF;
+	height: 120px;
+	background: white;
 	z-index: 100;
 	
   img {
@@ -99,9 +103,10 @@ article a {
 	  width: 100%;
 	  top: 0;
 	  z-index: 100;
-	  height: 144px;
-	  background: #DDCEAF;
+	  height: 120px;
+	  background: white;
 	  visibility: visible;
+	  border-bottom: 8px solid #c67e1b;
   }
   .header__logo {
 	  width: 40%;
@@ -115,7 +120,7 @@ article a {
   nav ul {
 	  float: right;
     width: auto;
-    height: 144px;
+    /* height: 144px; */
     margin-top: 10px;
     
     li {
@@ -123,7 +128,7 @@ article a {
       position: relative;
       float: left;
 	    font-weight: bold;
-	    font-size: 1.2em;
+	    font-size: 1.1em;
 	    /* text-transform: uppercase; */
 	    a {
 	      color: #000;
@@ -150,6 +155,12 @@ article a {
 
 
 .page-single-page-site {
+
+	#header, #content, #navigation, .region-sidebar-first, .region-sidebar-second, #footer {
+	    padding-left: 0;
+	    padding-right: 0;
+	}
+
   #page-title {
 	  display: none;
   }
@@ -166,17 +177,17 @@ article a {
 		  height: auto !important;
 		  position: relative;
 		  
+		  &:first-of-type {
+			 /*  padding-top: 54px; */
+		  }		  
 		  &:last-of-type {
-			  padding-bottom: 100px;
+			  min-height: 750px;
 		  }
 	  }
-	  
-	  .single-page-wrapper:last-of-type {
-	    article {
-		    min-height: 650px; 
-	    }	  
+	  .single-page {
+		  padding-bottom: 30px;
 	  }
-	  
+
 	  .to-next-page {
 	    font-size: 0;
 	    text-align: center;
@@ -211,9 +222,10 @@ article a {
 		 
 		#home {
 		  text-align: center;
-		  width: 500px;
-		  margin: -124px auto 0 auto;
-		   
+		  /* width: 500px; */
+/* 		  margin: -124px auto 0 auto; */
+		  margin: 0 auto 0 auto;
+		  border-bottom: #FF9400 solid 5px;
 		  .single-page-title {
 			  display: none;
 		  }
@@ -221,8 +233,26 @@ article a {
 		  h2 {
 		    font-family: 'Courgette', cursive;
 		    font-size: 46px;
+		    width: 500px;
+		    margin: 0 auto;
+		    padding: 70px 0;
+		  }
+		  .learn-more-button {
+			  padding-bottom: 90px;
 		  }
 		}
+	  #our-work {
+		  background-color: #ffcc77;
+		  border-bottom: #C67E1B solid 5px;
+	  }
+	  #therapists {
+		  background-color: #eedd99;
+		  border-bottom: #FF9400 solid 5px;
+	  }
+	  #find-us {
+	    background-color: #ffddaa;
+	    border-bottom: #C67E1B solid 5px; 
+	  }
 	}
 }
 
@@ -239,21 +269,31 @@ article a {
 	}
 }
 
-.google-map-field {
-	text-align: center;
-	padding-bottom: 30px;
+.google_map_field_display {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+	width: 70%;
+	margin: 0px auto 50px auto;
 }
 
-.google_map_field_display {
-  height: 400px;
-  width: 600px;
-  margin: 0 auto;
+.google_map_field_display .gm-style,
+.google_map_field_display iframe,
+.google_map_field_display object,
+.google_map_field_display embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .google-map-field-label {
 	font-size: 16px;
 	font-weight: bold;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 
 .item {
@@ -267,12 +307,21 @@ article a {
 	}	
 }
 
+.contact-info {
+  text-align: center;
+  h3 {
+	  margin-bottom: 2px;
+  }
+  p {
+	  margin: 4px auto;
+  }
+}
 
 @media screen and (max-width: 480px) {
   #header {
     #header-content {
 	    /* position: static; */
-	    height: 110px;
+	    height: 113px;
     }
     .header__logo {
 	    width: 50%;
@@ -286,16 +335,16 @@ article a {
       ul {
        /*  float: none; */
         display: block;
-        margin-right: 20px;
+        margin-right: 5px;
         margin-top: 3px;
         width: 100px;
-        padding: 0 0 0 50px;
+        padding: 0 0 0 5px;
         line-height: 20px;
-        height: 110px;
+        height: 108px;
         > li {
          width: 100%;
          font-size: 80%;
-         margin-bottom: 1px;
+         /* margin-bottom: 1px; */
          a {
 					 &:hover,
 					 &.active {
@@ -306,15 +355,11 @@ article a {
       }
     }
   }  
-  body .google_map_field_display {
-  	height: 268px;
-		width: 380px;
-		margin: 0 auto;
-	}
+
   body.page-single-page-site {
     #single-page-overall-wrapper {
       .single-page-wrapper {
-        padding: 114px 4px 0 4px;
+        padding: 109px 8px 0 8px;
         
       &:last-of-type {
 	      padding-bottom: 210px;
@@ -324,15 +369,28 @@ article a {
 	      margin-top: 0;
       }
       #home {
-	      width: auto;
+	      /* width: auto; */
 	      margin-top: 0;
 	      h2 {
-		      font-size: 32px;
+		      font-size: 30px;
 		      margin-top: 0px;
+		      width: 300px;
 	      }
+	      .learn-more-button {
+			  	padding-bottom: 20px;
+				}
 	    }
 	  }
+	  .google_map_field_display {
+		  width: 90%;
+		  margin: 0px auto 0 auto;
+	  }
+	  .google-map-field-label {
+			font-size: 14px;
+			padding-bottom: 5px;
+	  }
   }
+  
   .float-right {
 	  float: none;
 	  text-align: center;
@@ -357,18 +415,24 @@ article a {
   img {
 	  max-width: 90%;
   }
+  #contact-us-node-form {
+	textarea,
+	.grippie {
+		max-width: 400px;
+	}	
+}
 }
 
-@media screen and (min-width: 480px) and (max-width: 959px) {
+@media screen and (min-width: 481px) and (max-width: 859px) {
   #header {
     #header-content {
-	    height: 165px;
+	    height: 145px;
     }
     .header__logo {
 	    width: 100%;
     }
     img {
-	    width: 400px;
+	    width: 350px;
 	    height: auto;
     }
     nav[role="navigation"] {
@@ -376,14 +440,24 @@ article a {
       ul {
         float: none;
         display: block;
-        padding: 15px 0 0 100px;
+        padding: 15px 0 0 50px;
         
         li {
 	        margin-bottom: 8px;
+	        font-size: 90%;
+	        
         }
       }
     }
   }
+  body.page-single-page-site {
+    #single-page-overall-wrapper {
+      .single-page-wrapper {
+        padding: 144px 8px 0 8px;
+      }
+	  }
+	}
+
   #quotes .quote {
 	  width: 100%;
 	  padding-bottom: 5px;

@@ -130,3 +130,7 @@ function STARTERKIT_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+function artmonia_form_contact_us_node_form_alter(&$form, &$form_state, $form_id) {
+	dsm($form);
+}
