@@ -317,6 +317,26 @@ article a {
   }
 }
 
+.mollom-captcha-container {
+	span {
+		display: inline-block;
+	}
+	.mollom-image-captcha-instructions {
+		display: none;
+	}
+	.mollom-captcha-content {
+		position: relative;
+		top: 8px;
+		left: 20px;
+		padding-left: 0;
+	}
+}
+
+#edit-mollom-captcha {
+	display: inline-block;
+	margin-left: 20px;
+}
+
 @media screen and (max-width: 480px) {
   #header {
     #header-content {

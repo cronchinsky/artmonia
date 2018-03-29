@@ -132,5 +132,9 @@ function STARTERKIT_preprocess_block(&$variables, $hook) {
 // */
 
 function artmonia_form_contact_us_node_form_alter(&$form, &$form_state, $form_id) {
-	dsm($form);
+	//dsm($form);
+	$form['help_text'] = array(
+  	'#markup' => '<h4>For appointments or more information please contact us:</h4>'
+  );
+  $form['actions']['submit']['#value'] = t('Send');
 }
